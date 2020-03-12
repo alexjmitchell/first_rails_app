@@ -12,91 +12,24 @@
         <h1 id="title">Home</h1>
         <ul class="list">
           <li class="list__item"><%= link_to "About", about_path %></li>
-          <li class="list__item">Blogs</li>
+          <li class="list__item"><%= link_to "Blogs", articles_path %></li>
           <li class="list__item">Login/Register</li>
         </ul>
       </nav>
     </header>
     <main>
-      <section>
-        <span><h1>Article-1</h1></span>
-        <p class='article-text'>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
-        consequatur iure architecto error illo accusamus nam voluptate
-        perferendis sunt quibusdam provident, sed aliquid eius adipisci
-        cupiditate ab veritatis praesentium. Veniam quam iste, cupiditate labore
-        delectus magnam? Magni provident sint ratione ullam nam rerum aperiam
-        delectus corporis nostrum fugiat perspiciatis maiores sed amet placeat
-        tenetur libero commodi, quidem dicta. Voluptatem natus delectus fugiat
-        voluptates error quasi, tenetur veniam nostrum. Sequi perspiciatis
-        recusandae, eos saepe molestias quam laudantium odit harum sit aut, vel
-        nesciunt. Provident facere recusandae necessitatibus fuga nam asperiores
-        voluptatem labore, deleniti aut incidunt, similique cum ea. Incidunt,
-        culpa illo!
-        </p>
-      </section>
-       <section>
-        <span><h1>Article-2</h1></span>
-        <p class='article-text'>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
-        consequatur iure architecto error illo accusamus nam voluptate
-        perferendis sunt quibusdam provident, sed aliquid eius adipisci
-        cupiditate ab veritatis praesentium. Veniam quam iste, cupiditate labore
-        delectus magnam? Magni provident sint ratione ullam nam rerum aperiam
-        delectus corporis nostrum fugiat perspiciatis maiores sed amet placeat
-        tenetur libero commodi, quidem dicta. Voluptatem natus delectus fugiat
-        voluptates error quasi, tenetur veniam nostrum. Sequi perspiciatis
-        recusandae, eos saepe molestias quam laudantium odit harum sit aut, vel
-        nesciunt. Provident facere recusandae necessitatibus fuga nam asperiores
-        voluptatem labore, deleniti aut incidunt, similique cum ea. Incidunt,
-        culpa illo!Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
-        consequatur iure architecto error illo accusamus nam voluptate
-        perferendis sunt quibusdam provident, sed aliquid eius adipisci
-        cupiditate ab veritatis praesentium. Veniam quam iste, cupiditate labore
-        delectus magnam? Magni provident sint ratione ullam nam rerum aperiam
-        delectus corporis nostrum fugiat perspiciatis maiores sed amet placeat
-        tenetur libero commodi, quidem dicta. Voluptatem natus delectus fugiat
-        voluptates error quasi, tenetur veniam nostrum. Sequi perspiciatis
-        recusandae, eos saepe molestias quam laudantium odit harum sit aut, vel
-        nesciunt. Provident facere recusandae necessitatibus fuga nam asperiores
-        voluptatem labore, deleniti aut incidunt, similique cum ea. Incidunt,
-        culpa illo!
-        </p>
-      </section>
-       <section>
-        <span><h1>Article-3</h1></span>
-        <p class='article-text'>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
-        consequatur iure architecto error illo accusamus nam voluptate
-        perferendis sunt quibusdam provident, sed aliquid eius adipisci
-        cupiditate ab veritatis praesentium. Veniam quam iste, cupiditate labore
-        delectus magnam? Magni provident sint ratione ullam nam rerum aperiam
-        delectus corporis nostrum fugiat perspiciatis maiores sed amet placeat
-        tenetur libero commodi, quidem dicta. Voluptatem natus delectus fugiat
-        voluptates error quasi, tenetur veniam nostrum. Sequi perspiciatis
-        recusandae, eos saepe molestias quam laudantium odit harum sit aut, vel
-        nesciunt. Provident facere recusandae necessitatibus fuga nam asperiores
-        voluptatem labore, deleniti aut incidunt, similique cum ea. Incidunt,
-        culpa illo!
-        </p>
-      </section>
-       <section>
-        <span><h1>Article-4</h1></span>
-        <p class='article-text'>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
-        consequatur iure architecto error illo accusamus nam voluptate
-        perferendis sunt quibusdam provident, sed aliquid eius adipisci
-        cupiditate ab veritatis praesentium. Veniam quam iste, cupiditate labore
-        delectus magnam? Magni provident sint ratione ullam nam rerum aperiam
-        delectus corporis nostrum fugiat perspiciatis maiores sed amet placeat
-        tenetur libero commodi, quidem dicta. Voluptatem natus delectus fugiat
-        voluptates error quasi, tenetur veniam nostrum. Sequi perspiciatis
-        recusandae, eos saepe molestias quam laudantium odit harum sit aut, vel
-        nesciunt. Provident facere recusandae necessitatibus fuga nam asperiores
-        voluptatem labore, deleniti aut incidunt, similique cum ea. Incidunt,
-        culpa illo!
-        </p>
-      </section>
+      <% Article.all.each do |post| %>
+        <section>
+          <span>
+            <h1>
+              <%= link_to post.title, post %> 
+            </h1>
+          </span>
+          <p class="article-text">
+            <%= link_to post.description, post %>
+          </p>
+        </section>
+      <% end %>
       
     </main>
   </body>

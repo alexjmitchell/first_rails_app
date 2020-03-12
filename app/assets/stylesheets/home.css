@@ -43,11 +43,18 @@ span {
 }
 
 .article-text {
-  width: 90%;
-  margin: auto;
+  text-align: center;
 }
 
 a {
   color: white;
   text-decoration: none;
+}
+
+h1 a {
+  color: black;
+}
+
+.article-text a {
+  color: black;
 }
