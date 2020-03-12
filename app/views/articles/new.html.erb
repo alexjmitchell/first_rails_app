@@ -21,6 +21,17 @@
       <h1>Create an Article</h1>
       </br>
 
+      <% if @article.errors.any? %>
+        <h3>You have the following Errors: <h3>
+        <ul id="error_message">
+          <% @article.errors.full_messages.each do |msg| %>
+            <li>
+              <%= msg %>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+
       <%= form_for @article do |post| %>
         <div class="article_title_area">
           <%= post.label :title %>
