@@ -18,18 +18,7 @@
       </nav>
     </header>
     <main>
-      <% Article.all.each do |post| %>
-        <section>
-          <span>
-            <h1>
-              <%= link_to post.title, post %> 
-            </h1>
-          </span>
-          <p class="article-text">
-            <%= link_to post.description, post %>
-          </p>
-        </section>
-      <% end %>
+      <%= link_to "Alpha Blogs", articles_path %> | <%= link_to "About", about_path %>
       
     </main>
   </body>
