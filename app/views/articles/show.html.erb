@@ -6,16 +6,6 @@
     <title>Article Show</title>
   </head>
   <body>
-    <header>
-      <nav class="nav-bar">
-        <h1 id="title">Article - <%= @article.id %></h1>
-        <ul class="list">
-          <li class="list__item"><%= link_to "Home", root_path %></li>
-          <li class="list__item"><%= link_to "Blogs", articles_path %></li>
-          <li class="list__item">Login/Register</li>
-        </ul>
-      </nav>
-    </header>
     <ul class="article-list">
       <li>Title: <h3 class="article-title"><%= @article.title %></h3></li>
       <li>Description:  <p> <%= @article.description %> </p> <li>

@@ -6,19 +6,9 @@
     <title>Home</title>
   </head>
   <body>
-    <header>
-      <nav class="nav-bar">
-        <h1 id="title">Home</h1>
-        <ul class="list">
-          <li class="list__item"><%= link_to "About", about_path %></li>
-          <li class="list__item"><%= link_to "Blogs", articles_path %></li>
-          <li class="list__item">Login/Register</li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <%= link_to "Alpha Blogs", articles_path %> | <%= link_to "About", about_path %>
-      
-    </main>
+    <div class="jumbotron center">
+      <h1>Alpha Blog</h1>
+      <%= link_to "Sign up now", "#", class: "btn btn-primary btn-lg btn-xlarge" %>
+    </div>
   </body>
 </html>

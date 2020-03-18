@@ -1,27 +1,27 @@
  <% if @article.errors.any? %>
-        <h3>You have the following Errors: <h3>
-        <ul id="error_message">
-          <% @article.errors.full_messages.each do |msg| %>
-            <li>
-              <%= msg %>
-            </li>
-          <% end %>
-        </ul>
-      <% end %>
+  <h3>You have the following Errors: <h3>
+  <ul id="error_message">
+    <% @article.errors.full_messages.each do |msg| %>
+      <li>
+        <%= msg %>
+      </li>
+    <% end %>
+  </ul>
+  <% end %>
 
-      <%= form_for @article do |post| %>
-        <div class="article_title_area">
-          <%= post.label :title %>
-          </br>
-          <%= post.text_field :title %>
-        </div>
-        <div class="article_description_area">
-          <%= post.label :description %>
-          </br>
-          <%= post.text_area :description %>
-        </div>
-        <div class="article_submission_area">
-          </br>
-          <%= post.submit %>
-        </div>
-      <% end %>
+  <%= form_for @article do |post| %>
+    <div class="article_title_area">
+      <%= post.label :title %>
+      </br>
+      <%= post.text_field :title %>
+    </div>
+    <div class="article_description_area">
+      <%= post.label :description %>
+      </br>
+      <%= post.text_area :description %>
+    </div>
+    <div class="article_submission_area">
+      </br>
+      <%= post.submit %>
+    </div>
+  <% end %>

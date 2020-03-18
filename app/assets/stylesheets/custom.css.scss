@@ -1,4 +1,102 @@
 @import "bootstrap/dist/css/bootstrap";
 
-button.navbar-toggler {
+$navbar-default-bg: #7a7474;
+$navbar-default-text-color: #f5eded;
+
+.navbar {
+  margin-bottom: 20px;
+
+  #logo {
+    color: $navbar-default-text-color;
+    font-size: 1.7em;
+
+    &:hover {
+      color: darken($navbar-default-bg, 15);
+    }
+  }
+
+  .links {
+    color: $navbar-default-text-color !important;
+    &:hover {
+      color: darken($navbar-default-bg, 15) !important;
+    }
+  }
+
+  .navbar-toggler {
+    color: $navbar-default-text-color;
+    border-color: $navbar-default-text-color;
+    outline: none;
+  }
+
+  &.navbar-dark {
+    background-color: darken($navbar-default-bg, 20) !important;
+  }
+}
+
+#search-btn {
+  color: $navbar-default-text-color;
+  border-color: $navbar-default-text-color;
+
+  &:hover {
+    background-color: darken($navbar-default-bg, 20);
+    color: darken($navbar-default-text-color, 5);
+  }
+}
+
+.article-list {
+  list-style: none;
+}
+
+.center {
+  text-align: center;
+}
+
+.jumbotron {
+  background-image: asset-url("red-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 550px;
+
+  h1 {
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: -1px;
+    font-weight: bold;
+  }
+
+  .btn-xlarge {
+    font-size: 1.7em;
+    background-color: #000000;
+    border-color: lighten(#000000, 30);
+
+    &:hover {
+      background-color: #f91c00;
+    }
+  }
+}
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777777;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+
+  a:hover {
+    color: #222222;
+  }
+
+  small {
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    li {
+      margin-left: 15px;
+    }
+  }
 }
