@@ -100,3 +100,23 @@ footer {
     }
   }
 }
+
+table {
+  tr {
+    td {
+      a {
+        color: #ffffff;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.article-title {
+  text-align: center;
+}
+
+#error_message {
+  text-align: center;
+  list-style: none;
+}

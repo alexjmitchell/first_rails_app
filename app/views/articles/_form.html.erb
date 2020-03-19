@@ -1,6 +1,6 @@
  <% if @article.errors.any? %>
   <h3>You have the following Errors: <h3>
-  <ul id="error_message">
+  <ul id="error_message" class="alert alert-warning" role="alert">
     <% @article.errors.full_messages.each do |msg| %>
       <li>
         <%= msg %>
@@ -10,18 +10,18 @@
   <% end %>
 
   <%= form_for @article do |post| %>
-    <div class="article_title_area">
+    <div class="article_title_area form-group">
       <%= post.label :title %>
       </br>
-      <%= post.text_field :title %>
+      <%= post.text_field :title, class: "form-control" %>
     </div>
-    <div class="article_description_area">
+    <div class="article_description_area form-group">
       <%= post.label :description %>
       </br>
-      <%= post.text_area :description %>
+      <%= post.text_area :description, rows: 5, class: "form-control" %>
     </div>
-    <div class="article_submission_area">
-      </br>
-      <%= post.submit %>
+    <div class="form-group">
+      <%= post.submit class: "btn btn-danger" %>
+      <%= link_to "Back", articles_path, class: "btn btn-danger" %>
     </div>
   <% end %>

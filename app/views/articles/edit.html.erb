@@ -6,18 +6,8 @@
     <title>Edit Article</title>
   </head>
   <body>
-    <header>
-      <nav class="nav-bar">
-        <h1 id="title">Edit Article - <%= @article.id %> </h1>
-        <ul class="list">
-          <li class="list__item"><%= link_to "About", about_path %></li>
-          <li class="list__item"><%= link_to "Blogs", articles_path %></li>
-          <li class="list__item">Login/Register</li>
-        </ul>
-      </nav>
-    </header>
     <main>
-      <h1>Edit an Article</h1>
+      <h1 class="article-title">Edit an Article</h1>
       </br>
       <%= render "form" %>
     </main>
