@@ -1,0 +1,11 @@
+ <% if obj.errors.any? %>
+  <h3>You have the following Errors: <h3>
+  <ul id="error_message" class="alert alert-warning" role="alert">
+    <a href="#" class="close close-error-message" data-dismiss="alert">&#215;</a>
+    <% obj.errors.full_messages.each do |msg| %>
+      <li class="error-message-container">
+        <%= msg %>
+      </li>
+    <% end %>
+  </ul>
+  <% end %>

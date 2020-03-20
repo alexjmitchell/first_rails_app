@@ -6,8 +6,9 @@
       </li>
     </ul>
   -->
-  <div class="container">
-    <p class="alert alert-success">
+  <div class="container flash-message-container">
+    <p class='flash-message alert alert-<%= "#{name}" %>'>
+      <a href="#" class="close close-flash-message" data-dismiss="alert">&#215;</a>
       <%= message %>
     </p>
   </div>
