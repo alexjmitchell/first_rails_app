@@ -129,3 +129,17 @@ table {
     margin-right: 2rem;
   }
 }
+
+.show-container {
+  display: flex;
+  justify-content: center;
+
+  .card-link {
+    background-color: #2a65d4;
+    border-color: lighten(#2a65d4, 10);
+
+    &:hover {
+      background-color: darken(#2a65d4, 5);
+    }
+  }
+}

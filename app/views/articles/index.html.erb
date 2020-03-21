@@ -6,18 +6,17 @@
   <title>Article Index</title>
 </head>
 <body>
-  <h1><%= link_to "Create a new Article", new_article_path %></h1>
-  <br/>
   <table class="table table-dark">
     <tr>
       <th>Title</th>
       <th>Description</th>
+      <th>Actions</th>
     </tr>
 
     <% @articles.each do |article| %>
       <tr>
         <td><%= link_to article.title, article %></td>
-        <td><%= link_to article.description, article %></td>
+        <td><%= link_to truncate(article.description, length: 100), article %></td>
         <td><%= link_to "Edit", edit_article_path(article) %></td>
         <td><%= link_to "Show", article_path(article) %></td>
         <td><%= link_to "Delete", article, method: :delete, data: { confirm: "Are you sure?" } %></td>

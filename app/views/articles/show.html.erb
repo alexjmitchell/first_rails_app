@@ -6,11 +6,15 @@
     <title>Article Show</title>
   </head>
   <body>
-    <div class="card" style=<%= @article.description.length > 100 ? "width:50rem;" : "width:18rem;" %>>
-      <div class="card-body">
-        <h5 class="card-title"><%= @article.title %></h5>
-        <p class="card-text"><%= @article.description %></p>
-        <%= link_to "Edit", edit_article_path(@article), class: "card-link btn btn-primary" %>
+    <div class="container show-container">
+      <div class="card" style=<%= @article.description.length > 100 ? "width:50rem;" : "width:25rem;" %>>
+        <div class="card-body">
+          <h5 class="card-title"><%= @article.title %></h5>
+          <p class="card-text"><%= @article.description %></p>
+          <%= link_to "Edit", edit_article_path(@article), class: "card-link btn btn-primary" %>
+          <%= link_to "Delete", article_path(@article), method: :delete, data: { confirm: "Are you sure ?" }, class: "card-link btn btn-danger" %>
+          <%= link_to "View All Articles", articles_path, class: "card-link btn btn-primary" %>
+        </div>
       </div>
     </div>
       <!-- 
