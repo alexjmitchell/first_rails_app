@@ -160,6 +160,7 @@ table {
 
     .card {
       text-align: center;
+      width: 20rem;
       .card-title {
         text-transform: capitalize;
       }
@@ -168,6 +169,11 @@ table {
 }
 
 @media only screen and (max-width: 770px) {
+  .container {
+    display: flex;
+    justify-content: center;
+  }
+
   .mobile-view-articles {
     display: flex;
     flex-direction: column;
