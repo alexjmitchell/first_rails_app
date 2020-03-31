@@ -112,6 +112,10 @@ table {
   }
 }
 
+.mobile-view-articles {
+  display: none;
+}
+
 .article-title {
   text-align: center;
 }
@@ -140,6 +144,36 @@ table {
 
     &:hover {
       background-color: darken(#2a65d4, 5);
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .articles-table {
+    display: none;
+  }
+  .mobile-view-articles {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    gap: 1rem;
+
+    .card {
+      text-align: center;
+      .card-title {
+        text-transform: capitalize;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 770px) {
+  .mobile-view-articles {
+    display: flex;
+    flex-direction: column;
+
+    .card {
+      margin-bottom: 1rem;
     }
   }
 }
