@@ -3,12 +3,12 @@
   <%= form_for @article do |post| %>
     <div class="article_title_area form-group">
       <%= post.label :title %>
-      </br>
+      <br>
       <%= post.text_field :title, class: "form-control" %>
     </div>
     <div class="article_description_area form-group">
       <%= post.label :description %>
-      </br>
+      <br>
       <%= post.text_area :description, rows: 5, class: "form-control" %>
     </div>
     <div class="form-group">
