@@ -1,0 +1,23 @@
+  <%= render "shared/errors", obj: @user %>
+
+  <%= form_for @user do |user| %>
+    <div class="user-username-area form-group">
+      <%= user.label :username %>
+      <br>
+      <%= user.text_field :username, class: "form-control" %>
+    </div>
+    <div class="user-email-area form-group">
+      <%= user.label :email %>
+      <br>
+      <%= user.email_field :email, class: "form-control" %>
+    </div>
+    <div class="user-password-area form-group">
+      <%= user.label :password %>
+      <br>
+      <%= user.password_field :password, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= user.submit "Sign Up", class: "btn btn-danger" %>
+      <%= link_to "Back", root_path, class: "btn btn-danger" %>  
+    </div>
+  <% end %>
