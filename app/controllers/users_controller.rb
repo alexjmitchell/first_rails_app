@@ -23,13 +23,19 @@ class UsersController < ApplicationController
   def show
   end
 
+  def edit
+  end
+
   def update
+    if @user.update(user_params)
+      flash[:success] = "user has been updated."
+      redirect_to user_path(@user)
+    else
+      render :edit
+    end
   end
 
   def destroy
-  end
-
-  def update
   end
 
   private
