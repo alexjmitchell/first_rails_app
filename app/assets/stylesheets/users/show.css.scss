@@ -1,0 +1,23 @@
+.user-title {
+  text-align: center;
+}
+
+.user-show-h4 {
+  text-align: center;
+}
+
+.img-circler {
+  border-radius: 50%;
+  margin: auto;
+}
+
+.user-articles {
+  text-align: center;
+  width: auto;
+
+  .card {
+    margin-bottom: 1rem;
+    background-color: darken(#ffffff, 5);
+    border-color: darken(#ffffff, 20);
+  }
+}
