@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Users</title>
+</head>
+<body>
+  <div align="center" class="users-index-container">
+    <h1 class="user-index-title">All Alpha Bloggers</h1>
+    <% @users.each do |user| %>
+      <ul class="listing">
+        <div class="card row">
+          <%= link_to gravatar_for(user), user_path(user) %>
+          <div class="card-body col-md-4 col-md-offset-4">
+            <li>
+              <h5 class="card-title"><%= link_to user.username, user_path(user) %></h5>
+            </li>
+            <li>
+              <h6 class="card-subtitle mb-2">
+                <small><%= pluralize(user.articles.count, "article") if user.articles %></small>
+              </h6>
+            </li>
+          </div>
+        </div>
+      </ul>
+    <% end %>
+  </div>
+</body>
+</html>

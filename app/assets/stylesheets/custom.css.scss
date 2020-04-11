@@ -76,17 +76,28 @@ $navbar-default-text-color: #f5eded;
   }
 }
 
-footer {
-  margin-top: 45px;
+.footer {
   padding-top: 5px;
+  padding-left: 1rem;
+  padding-right: 1rem;
   border-top: 1px solid #eaeaea;
   color: #777777;
   display: flex;
+  height: 2.5rem;
   align-items: baseline;
   justify-content: space-between;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #777777;
+  color: white;
 
-  a:hover {
-    color: #222222;
+  a {
+    color: white;
+    &:hover {
+      color: #222222;
+    }
   }
 
   small {
@@ -138,6 +149,10 @@ table {
   display: flex;
   justify-content: center;
 
+  .card {
+    // height: 1rem;
+  }
+
   .card-link {
     background-color: #2a65d4;
     border-color: lighten(#2a65d4, 10);
@@ -168,6 +183,10 @@ table {
   }
 }
 
+.container {
+  min-height: 1024px;
+}
+
 @media only screen and (max-width: 770px) {
   .container {
     display: flex;
@@ -186,4 +205,38 @@ table {
 
 .signup-title {
   text-align: center;
+}
+
+.listing {
+  list-style: none;
+  padding-left: none;
+
+  .card {
+    // text-align: center;
+    padding: 1rem;
+    background-color: darken(#ffffff, 10);
+    border-color: darken(#ffffff, 45);
+    align-items: center;
+    width: 30rem;
+
+    .card-body {
+      // text-align: center;
+    }
+
+    .card-subtitle {
+      color: lighten(#000000, 40);
+    }
+  }
+}
+
+//
+
+.users-index-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.debug {
+  margin-top: 1rem;
 }
