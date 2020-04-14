@@ -36,7 +36,6 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    byebug
   end
 
   def destroy

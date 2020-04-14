@@ -21,6 +21,17 @@
                 <small><%= pluralize(user.articles.count, "article") if user.articles %></small>
               </h6>
             </li>
+            <aside class="buttons-container">
+              <li>
+                <%= link_to "View Profile", user_path(user), class: "btn btn-success" %>
+              </li>
+              <li>
+                <%= link_to "Edit Profile", edit_user_path(user), class: "btn btn-warning" %>
+              </li>
+            </aside>
+            <li>
+              <small>Joined <%= time_ago_in_words(user.created_at) %></small>
+            </li>
           </div>
         </div>
       </ul>
