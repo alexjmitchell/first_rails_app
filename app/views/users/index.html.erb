@@ -8,6 +8,9 @@
 <body>
   <div align="center" class="users-index-container">
     <h1 class="user-index-title">All Alpha Bloggers</h1>
+    <div class="digg_pagination mb-4">
+       <%= will_paginate @users %>
+    </div>
     <% @users.each do |user| %>
       <ul class="listing">
         <div class="card row">
@@ -36,6 +39,9 @@
         </div>
       </ul>
     <% end %>
+    <div class="digg_pagination mb-4">
+       <%= will_paginate @users %>
+    </div>
   </div>
 </body>
 </html>

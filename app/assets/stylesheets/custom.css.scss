@@ -112,9 +112,13 @@ table {
 .show-container {
   display: flex;
   justify-content: center;
+  align-items: center;
 
   .card {
     // height: 1rem;
+    text-align: center;
+    h6 {
+    }
   }
 
   .card-link {

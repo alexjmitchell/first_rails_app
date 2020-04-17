@@ -10,7 +10,14 @@
       <div class="card" style=<%= @article.description.length > 100 ? "width:50rem;" : "width:25rem;" %>>
         <div class="card-body">
           <h5 class="card-title"><%= @article.title %></h5>
-          <h6 class="card-subtitle mb-2 text-muted"><%= link_to @article.user ? "By: #{@article.user.username}" : "By: Unknown", @article.user ? user_path(@article.user) : href = "#" %></h6>
+          <div class="subtitle-container">
+            <h6 class="card-subtitle mb-2 text-muted">
+              <%= gravatar_for @article.user, size: 55 %>
+              &nbsp;
+              <%= link_to @article.user ? "By: #{@article.user.username}" : "By: Unknown", @article.user ? user_path(@article.user) : href = "#" %>
+            </h6>
+            
+          </div>
           <p class="card-text"><%= @article.description %></p>
           <%= link_to "Edit", edit_article_path(@article), class: "card-link btn btn-primary" %>
           <%= link_to "Delete", article_path(@article), method: :delete, data: { confirm: "Are you sure ?" }, class: "card-link btn btn-danger" %>
