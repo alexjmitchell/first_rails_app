@@ -1,0 +1,16 @@
+  <%= form_with(scope: :session, url: login_path, class: "", local: true) do |user| %>
+    <div class="user-email-area form-group">
+      <%= user.label :email %>
+      <br>
+      <%= user.email_field :email, class: "form-control" %>
+    </div>
+    <div class="user-password-area form-group">
+      <%= user.label :password %>
+      <br>
+      <%= user.password_field :password, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= user.submit "Login", class: "btn btn-danger" %>
+      <%= link_to "Back", root_path, class: "btn btn-danger" %>  
+    </div>
+  <% end %>
