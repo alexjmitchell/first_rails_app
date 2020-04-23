@@ -2,10 +2,20 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: [:edit, :update, :show, :destroy]
 
   def new
-    @article = Article.new
+    if logged_in?
+      @article = Article.new
+    else
+      flash[:warning] = "you must login to create an article"
+      redirect_to login_path
+    end
   end
 
   def edit
+    user = @article.user
+    if (user.username != current_user.username)
+      flash[:warning] = "You cannot edit someone else's article"
+      redirect_to root_path
+    end
   end
 
   def index
@@ -24,7 +34,7 @@ class ArticlesController < ApplicationController
   def create
     # render plain: params[:article].inspect // allows you to view what is being passed to article
     @article = Article.new(article_params)
-    @article.user = User.first
+    @article.user = helpers.current_user if helpers.logged_in?
     # @article.save
     # redirect_to article_path(@article)
     if (@article.save)
@@ -36,6 +46,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    @user = @article.user
   end
 
   def destroy

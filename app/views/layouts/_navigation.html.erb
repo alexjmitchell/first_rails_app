@@ -17,13 +17,15 @@
       <li class="nav-item">
         <%= link_to "Bloggers", users_path, class: "nav-link links" %>
       </li>
+      <!--
       <li class="nav-item">
         <a class="nav-link links" href="/about">About</a>
       </li>
-      <li class="nav-item">
-        <%= link_to "Create Article", new_article_path, class: "nav-link links" %>
-      </li>
+      -->
       <% if logged_in? %>
+        <li class="nav-item">
+          <%= link_to "Create Article", new_article_path, class: "nav-link links" %>
+        </li>
         <li class="nav-item">
           <%= link_to "Logout", logout_path, class: "nav-link links", method: :delete %>
         </li>

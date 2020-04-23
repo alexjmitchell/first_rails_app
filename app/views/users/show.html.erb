@@ -13,9 +13,11 @@
       <%= gravatar_for @user, size: 200 %>
     </div>
   </div>
-  <div class="user-show-btn-container">
-    <%= link_to "Edit your Profile", edit_user_path(@user), class: "btn btn-outline-warning user-show-edit-btn" %>
-  </div>
+  <% if logged_in? && current_user.username == @user.username %>
+    <div class="user-show-btn-container">
+      <%= link_to "Edit your Profile", edit_user_path(@user), class: "btn btn-outline-warning user-show-edit-btn" %>
+    </div>
+  <% end %>
   <h4 class="user-show-h4">
     <%= @user.username %>'s articles
   </h4>

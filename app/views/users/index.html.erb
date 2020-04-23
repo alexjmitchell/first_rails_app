@@ -28,9 +28,11 @@
               <li>
                 <%= link_to "View Profile", user_path(user), class: "btn btn-success" %>
               </li>
-              <li>
-                <%= link_to "Edit Profile", edit_user_path(user), class: "btn btn-warning" %>
-              </li>
+              <% if logged_in? && current_user.username == user.username %>
+                <li>
+                  <%= link_to "Edit Profile", edit_user_path(user), class: "btn btn-warning" %>
+                </li>
+              <% end %>
             </aside>
             <li>
               <small>Joined <%= time_ago_in_words(user.created_at) %></small>
